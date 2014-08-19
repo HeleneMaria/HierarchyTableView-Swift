@@ -26,13 +26,10 @@ class HMHierarchyTableViewCell: UITableViewCell {
         //to notify the tableView that a click has been done
         NSNotificationCenter.defaultCenter().postNotificationName("expandButtonClick", object: self)
     }
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        var indentPoints = node.level * 40;
-//        self.expandButton.frame = CGRectMake(CGFloat(indentPoints), self.expandButton.frame.origin.y,30,30) as CGRect
-////        self.contentView.frame = CGRectMake(CGFloat(indentPoints), self.contentView.frame.origin.y,CGFloat(widthT),self.contentView.frame.size.height) as CGRect
-//        println("layoutsubviews \(nameLabel.text)")
-//    }
+    override func layoutSubviews() {
+        self.bounds = CGRectMake(-CGFloat(node.level * 10), self.bounds.origin.y, 300-CGFloat(node.level * 20), self.bounds.height)
+        super.layoutSubviews()
+    }
     
     
 }

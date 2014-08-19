@@ -131,11 +131,7 @@ class HMHierarchyTableViewController: UITableViewController {
         else{
             cell.expandButton.setBackgroundImage(UIImage(named: "arrowRight"), forState: UIControlState.Normal)
         }
-        //IndentationLevel (as indentationLevelForRowAtIndexPath doesn't work for custom cell)
-        var indentPoints =  -(node.level * 20)
-        cell.contentView.bounds = CGRectMake(CGFloat(indentPoints), cell.contentView.frame.origin.y,cell.contentView.frame.size.width,cell.contentView.frame.size.height) as CGRect
-        
-        return cell
+                return cell
     }
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
